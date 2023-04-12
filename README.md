@@ -105,13 +105,15 @@ The only breaking change between version one and two is `chart_wh` prop. It is r
 | Property            | Type                      | Description                        | Required | Default        |
 | ------------------- | ------------------------- | ---------------------------------- | -------- | -------------- |
 | widthAndHeight      | Number                    | chart width and height             | **Yes**  |                |
-| coverFill           | String                    | doughnut cover fill color          |   No     | #FFF           |
-| coverRadius         | Number                    | doughnut cover radius              |   No     | 0.6            |
-| doughnut            | Bool                      | doughnut style                     |   No     | false          |
 | series              | Array < number >          | series data array                  | **Yes**  |                |
 | sliceColor          | Array < string >          | series slice color array           | **Yes**  |                |
+| coverRadius         | Number                    | Size of the doughnut's hole, in percentage |   No     | 0.6            |
+| coverFill           | String | null             | doughnut cover fill color. Set it to null to make it transparent. |   No     | null           |
+| doughnut            | Bool                      | doughnut style                     |   No     | false          |
 | style               | Object                    | pie chart style                    |   No     | {}             |
 
 `series` should be a list of all positive (or zero) numbers. The sum of the series cannot be zero.
 
 The size of the `sliceColor` array should be equal to the size of the `series` array.
+
+`coverRadius` should be between zero and one.

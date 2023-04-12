@@ -1,34 +1,45 @@
-import React from 'react';
-import {StyleSheet, ScrollView, StatusBar, Text, View} from 'react-native';
-import PieChart from 'react-native-pie-chart';
+import React from 'react'
+import { StyleSheet, ScrollView, StatusBar, Text, View } from 'react-native'
+import PieChart from 'react-native-pie-chart'
 
 const App = () => {
-  const widthAndHeight = 250;
-  const series = [123, 321, 123, 789, 537];
-  const sliceColor = ['#F44336', '#2196F3', '#FFEB3B', '#4CAF50', '#FF9800'];
+  const widthAndHeight = 250
+  const series = [430, 321, 185, 123, 80]
+  const sliceColor = ['#fbd203', '#ffb300', '#ff9100', '#ff6c00', '#ff3c00']
   return (
     <ScrollView style={styles.scrollContainer}>
       <View style={styles.container}>
         <StatusBar hidden={true} />
-        <Text style={styles.title}>Basic</Text>
+
+        <Text style={styles.title}>Pie</Text>
         <PieChart
           widthAndHeight={widthAndHeight}
           series={series}
           sliceColor={sliceColor}
         />
+
         <Text style={styles.title}>Doughnut</Text>
         <PieChart
           widthAndHeight={widthAndHeight}
           series={series}
           sliceColor={sliceColor}
           doughnut={true}
-          coverRadius={0.45}
-          coverFill={'#FFF'}
+          coverRadius={0.6}
+        />
+
+        <Text style={styles.title}>Doughnut with fill</Text>
+        <PieChart
+          widthAndHeight={widthAndHeight}
+          series={series}
+          sliceColor={sliceColor}
+          doughnut={true}
+          coverRadius={0.6}
+          coverFill={'#ffeab2'}
         />
       </View>
     </ScrollView>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   scrollContainer: {
@@ -42,6 +53,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     margin: 10,
   },
-});
+})
 
-export default App;
+export default App

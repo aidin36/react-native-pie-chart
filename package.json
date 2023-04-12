@@ -1,6 +1,6 @@
 {
   "name": "react-native-pie-chart",
-  "version": "2.1.1",
+  "version": "3.0.0",
   "description": "pie chart for react native",
   "main": "./dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/genexu/react-native-pie-chart.git"
+    "url": "https://github.com/aidin36/react-native-pie-chart"
   },
-  "author": "Gene Xu",
+  "author": "Aidin Gharibnavaz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/genexu/react-native-pie-chart/issues"
+    "url": "https://github.com/aidin36/react-native-pie-chart/issues"
   },
   "keywords": [
     "react",
@@ -28,11 +28,10 @@
     "pie-chart"
   ],
   "peerDependencies": {
-    "react": ">=16.6.0",
-    "react-native": ">=0.58.0",
-    "@react-native-community/art": ">=1.1.2"
+    "react": ">=16.14.0",
+    "react-native": ">=0.69.0",
+    "react-native-svg": ">=13.0.0"
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "7.20.7",
     "@babel/core": "7.20.7",
@@ -56,5 +55,8 @@
     "metro-react-native-babel-preset": "0.73.6",
     "prettier": "2.8.1",
     "typescript": "4.9.4"
+  },
+  "dependencies": {
+    "d3-shape": "^3.2.0"
   }
 }

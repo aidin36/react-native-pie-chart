@@ -1,64 +1,94 @@
-import React from 'react';
-import { StyleProp, ViewStyle } from 'react-native';
+// Copyright 2023 Aidin Gharibnavaz <https://aidinhut.com>
 
-import Pie from './Pie';
+import { StyleProp, ViewStyle } from 'react-native'
+import { Svg, G, Path } from 'react-native-svg'
+import * as d3 from 'd3-shape'
 
 export type Props = {
-  widthAndHeight: number;
-  series: number[];
-  sliceColor: string[];
-  coverFill?: string;
-  coverRadius?: number;
-  doughnut?: boolean;
-  style?: StyleProp<ViewStyle>;
-};
+  widthAndHeight: number
+  series: number[]
+  sliceColor: string[]
+  coverFill?: string | null
+  coverRadius?: number
+  doughnut?: boolean
+  style?: StyleProp<ViewStyle>
+}
 
 const PieChart = ({
   widthAndHeight,
   series,
   sliceColor,
-  coverFill = '#FFF',
-  coverRadius = 0.6,
+  coverFill = null,
+  coverRadius,
+  // TODO: Should I remove this?
   doughnut = false,
+  // Should I remove this? Should I instead, allow to add stuff to SVG?
   style = {},
 }: Props): JSX.Element => {
-  const handleAngle = () => {
-    const sum = series.reduce((previous, current) => previous + current, 0);
-
-    series.forEach((s) => {
-      if (s < 0) {
-        throw Error('Invalid series: all numbers should be positive');
-      }
-    });
-    if (sum <= 0) {
-      throw Error('Invalid series: sum of series is zero');
+  // Validating props
+  series.forEach((s) => {
+    if (s < 0) {
+      throw Error(`Invalid series: all numbers should be positive. Found ${s}`)
     }
+  })
 
-    const angle = series.reduce(
-      (previous, current, index) => {
-        if (index == series.length - 1) {
-          return previous.concat(360);
-        }
-        return previous.concat(previous[previous.length - 1] + Math.floor((360 * current) / sum));
-      },
-      [0]
-    );
+  const sum = series.reduce((previous, current) => previous + current, 0)
+  if (sum <= 0) {
+    throw Error('Invalid series: sum of series is zero')
+  }
 
-    return angle;
-  };
+  if (sliceColor.length != series.length) {
+    throw Error(
+      `Invalid "sliceColor": its length should be equal to the length of "series". sliceColor.length=${sliceColor.length} series.length=${series.length}`
+    )
+  }
+
+  if (coverRadius && (coverRadius < 0 || coverRadius > 1)) {
+    throw Error(`Invalid "coverRadius": It should be between zero and one. But it's ${coverRadius}`)
+  }
+
+  const radius = widthAndHeight / 2
+
+  const pieGenerator = d3.pie().sort(null)
+
+  // const arcs = pie(d3.entries(series))
+  const arcs = pieGenerator(series)
 
   return (
-    <Pie
-      widthAndHeight={widthAndHeight}
-      series={series}
-      sliceColor={sliceColor}
-      coverFill={coverFill}
-      coverRadius={coverRadius}
-      doughnut={doughnut}
-      style={style}
-      angle={handleAngle()}
-    />
-  );
-};
+    <Svg width={widthAndHeight} height={widthAndHeight}>
+      <G transform={`translate(${widthAndHeight / 2}, ${widthAndHeight / 2})`}>
+        {arcs.map((arc, i) => {
+          let arcGenerator = d3.arc().outerRadius(radius).startAngle(arc.startAngle).endAngle(arc.endAngle)
 
-export default PieChart;
+          // When 'coverFill' is also provided, instead of setting the
+          // 'innerRadius', we draw a circle in the middle. See the 'Path'
+          // after the 'map'.
+          if (!coverRadius) {
+            arcGenerator = arcGenerator.innerRadius(0)
+          } else {
+            arcGenerator = arcGenerator.innerRadius(coverRadius * radius)
+          }
+
+          // TODO: Pad: "stroke": "black, "stroke-width": "2px"
+          //       OR: use padAngle
+          return <Path key={arc.index} fill={sliceColor[i]} d={arcGenerator()} />
+        })}
+
+        {coverRadius && coverRadius > 0 && coverFill && (
+          <Path
+            key='cover'
+            fill={coverFill}
+            d={d3
+              .arc()
+              .outerRadius(coverRadius * radius)
+              .innerRadius(0)
+              .startAngle(0)
+              .endAngle(360)()}
+          />
+        )}
+      </G>
+    </Svg>
+  )
+}
+
+export default PieChart
