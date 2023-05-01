@@ -10,7 +10,6 @@ export type Props = {
   sliceColor: string[]
   coverFill?: string | null
   coverRadius?: number
-  doughnut?: boolean
   style?: StyleProp<ViewStyle>
 }
 
@@ -22,7 +21,6 @@ const PieChart = ({
   coverRadius,
   // TODO: Should I remove this?
   doughnut = false,
-  // Should I remove this? Should I instead, allow to add stuff to SVG?
   style = {},
 }: Props): JSX.Element => {
   // Validating props
@@ -51,11 +49,10 @@ const PieChart = ({
 
   const pieGenerator = d3.pie().sort(null)
 
-  // const arcs = pie(d3.entries(series))
   const arcs = pieGenerator(series)
 
   return (
-    <Svg width={widthAndHeight} height={widthAndHeight}>
+    <Svg style={style} width={widthAndHeight} height={widthAndHeight}>
       <G transform={`translate(${widthAndHeight / 2}, ${widthAndHeight / 2})`}>
         {arcs.map((arc, i) => {
           let arcGenerator = d3.arc().outerRadius(radius).startAngle(arc.startAngle).endAngle(arc.endAngle)
