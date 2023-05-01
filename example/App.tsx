@@ -1,15 +1,16 @@
-import React from 'react'
-import { StyleSheet, ScrollView, StatusBar, Text, View } from 'react-native'
+import { StatusBar } from 'expo-status-bar'
+import { StyleSheet, ScrollView, View, Text } from 'react-native'
 import PieChart from 'react-native-pie-chart'
 
-const App = () => {
+export default function App() {
   const widthAndHeight = 250
   const series = [430, 321, 185, 123, 80]
   const sliceColor = ['#fbd203', '#ffb300', '#ff9100', '#ff6c00', '#ff3c00']
+
   return (
     <ScrollView style={styles.scrollContainer}>
       <View style={styles.container}>
-        <StatusBar hidden={true} />
+        <StatusBar style="auto" />
 
         <Text style={styles.title}>Pie</Text>
         <PieChart
@@ -47,12 +48,12 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    backgroundColor: '#fff',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   title: {
     fontSize: 24,
     margin: 10,
   },
 })
-
-export default App

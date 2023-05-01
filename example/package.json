@@ -1,43 +1,25 @@
 {
   "name": "example",
-  "version": "0.0.1",
-  "private": true,
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "start": "react-native start",
-    "tsc": "tsc",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
   },
   "dependencies": {
-    "react": "18.1.0",
-    "react-native": "0.70.6",
+    "expo": "~48.0.15",
+    "expo-status-bar": "~1.4.4",
+    "react": "18.2.0",
+    "react-native": "0.71.7",
     "react-native-pie-chart": "file:../react-native-pie-chart-3.0.0.tgz",
-    "react-native-svg": "13.9.0"
+    "react-native-svg": "13.4.0"
   },
   "devDependencies": {
-    "@babel/core": "7.20.7",
-    "@babel/runtime": "7.20.7",
-    "@react-native-community/eslint-config": "3.2.0",
-    "@tsconfig/react-native": "2.0.3",
-    "@types/react": "^18.0.21",
-    "@types/react-native": "^0.70.6",
-    "@typescript-eslint/eslint-plugin": "5.48.0",
-    "@typescript-eslint/parser": "5.48.0",
-    "eslint": "8.31.0",
-    "metro-react-native-babel-preset": "0.73.6",
-    "react-test-renderer": "18.1.0",
-    "typescript": "4.9.4"
+    "@babel/core": "^7.20.0",
+    "@types/react": "~18.0.14",
+    "typescript": "^4.9.4"
   },
-  "jest": {
-    "preset": "react-native",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ]
-  }
+  "private": true
 }
