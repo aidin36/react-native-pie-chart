@@ -23,7 +23,7 @@
     "react/require-default-props": "off",
     "eqeqeq": "off",
     "no-use-before-define": "off",
-    "react/function-component-definition": [2, { "namedComponents": "arrow-function", "unnamedComponents": "arrow-function" } ]
+    "react/function-component-definition": [2, { "namedComponents": "arrow-function", "unnamedComponents": "arrow-function" } ],
     // We're using the new JSX transform.
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off"

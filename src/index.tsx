@@ -19,8 +19,6 @@ const PieChart = ({
   sliceColor,
   coverFill = null,
   coverRadius,
-  // TODO: Should I remove this?
-  doughnut = false,
   style = {},
 }: Props): JSX.Element => {
   // Validating props
