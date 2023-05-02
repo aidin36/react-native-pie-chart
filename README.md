@@ -109,7 +109,7 @@ The only breaking change between version one and two is `chart_wh` prop. It is r
 | widthAndHeight | Number   | **Yes**  |           |
 | series         | number[] | **Yes**  |           |
 | sliceColor     | string[] | **Yes**  |           |
-| coverRadius    | Number   | No       | 0.6       |
+| coverRadius    | Number   | No       | undefined |
 | coverFill      | string   | No       | undefined |
 | style          | Object   | No       | {}        |
 
