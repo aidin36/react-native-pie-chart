@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/react-native-pie-chart)](https://www.npmjs.com/package/react-native-pie-chart)
 [![npm downloads](https://img.shields.io/npm/dt/react-native-pie-chart?logo=npm)](https://www.npmjs.com/package/react-native-pie-chart)
-[![license](https://img.shields.io/npm/l/react-native-pie-chart)](https://github.com/genexu/react-native-pie-chart/blob/master/LICENSE)
+[![license](https://img.shields.io/npm/l/react-native-pie-chart)](https://github.com/aidin36/react-native-pie-chart/blob/master/LICENSE)
 
 Simple pie chart module for your React Native app, for both iOS and Android.
 
