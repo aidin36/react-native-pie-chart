@@ -6,7 +6,7 @@
 
 Simple pie chart module for your React Native app, for both iOS and Android.
 
-![Screen shot of how the Pie Chart and Doughnut chart look like](preview.png)
+<img src="https://raw.githubusercontent.com/aidin36/react-native-pie-chart/main/preview.png" width="400" />
 
 ## Installation
 
