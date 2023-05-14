@@ -24,7 +24,6 @@ export default function App() {
           widthAndHeight={widthAndHeight}
           series={series}
           sliceColor={sliceColor}
-          doughnut={true}
           coverRadius={0.6}
         />
 
@@ -33,7 +32,6 @@ export default function App() {
           widthAndHeight={widthAndHeight}
           series={series}
           sliceColor={sliceColor}
-          doughnut={true}
           coverRadius={0.6}
           coverFill={'#ffeab2'}
         />
