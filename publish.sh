@@ -10,6 +10,7 @@ if [ -n "$GIT_STATUS" ]; then
 fi
 
 npm install
+rm -rf ./dist
 npm run check
 npm run build
 
