@@ -1,5 +1,5 @@
-import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, ScrollView, View, Text } from 'react-native'
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import PieChart from 'react-native-pie-chart'
 
 export default function App() {
@@ -54,4 +54,4 @@ const styles = StyleSheet.create({
     fontSize: 24,
     margin: 10,
   },
-})
+});
