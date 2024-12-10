@@ -11,6 +11,7 @@
   },
   "extends": [
     "airbnb",
+    "airbnb/hooks",
     "prettier",
     "plugin:@typescript-eslint/recommended"
   ],

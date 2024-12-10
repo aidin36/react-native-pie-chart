@@ -1,6 +1,6 @@
 {
   "name": "react-native-pie-chart",
-  "version": "3.0.2",
+  "version": "3.1.0",
   "description": "pie chart for react native",
   "main": "./dist/index.js",
   "types": "dist/index.d.ts",
@@ -28,38 +28,37 @@
     "pie-chart"
   ],
   "peerDependencies": {
-    "react": ">=16.14.0",
-    "react-native": ">=0.69.0",
-    "react-native-svg": ">=13.0.0"
+    "react": ">=18.2.0",
+    "react-native": ">=0.73.0",
+    "react-native-svg": ">=15.8.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.23.4",
-    "@babel/core": "7.23.5",
-    "@babel/eslint-parser": "7.23.3",
-    "@babel/runtime": "7.23.5",
-    "@react-native/eslint-config": "0.74.0",
-    "@types/react": "18.2.39",
-    "@typescript-eslint/eslint-plugin": "6.13.1",
-    "@typescript-eslint/parser": "6.13.1",
-    "eslint": "8.54.0",
+    "@babel/cli": "7.26.4",
+    "@babel/core": "7.26.0",
+    "@babel/eslint-parser": "7.25.9",
+    "@babel/runtime": "7.26.0",
+    "@react-native/eslint-config": "0.76.5",
+    "@types/react": "18.3.12",
+    "@typescript-eslint/eslint-plugin": "8.18.0",
+    "@typescript-eslint/parser": "8.18.0",
+    "eslint": "8.57.0",
     "eslint-config-airbnb": "19.0.4",
-    "eslint-config-prettier": "9.0.0",
-    "eslint-plugin-import": "2.29.0",
-    "eslint-plugin-jsx-a11y": "6.8.0",
-    "eslint-plugin-prettier": "5.0.1",
-    "eslint-plugin-react": "7.33.2",
-    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-import": "2.31.0",
+    "eslint-plugin-jsx-a11y": "6.10.2",
+    "eslint-plugin-prettier": "5.2.1",
+    "eslint-plugin-react": "7.37.2",
     "eslint-plugin-react-native": "4.1.0",
     "metro-react-native-babel-preset": "0.77.0",
-    "prettier": "3.1.0",
-    "typescript": "5.3.2",
-    "react": "18.2.0",
-    "react-native": "0.72.7"
+    "prettier": "3.4.2",
+    "typescript": "5.7.2",
+    "react": "18.3.1",
+    "react-native": "0.76.5"
   },
   "dependencies": {
     "d3-shape": "3.2.0"
   },
   "volta": {
-    "node": "20.15.0"
+    "node": "22.12.0"
   }
 }
