@@ -10,9 +10,9 @@ if [ -n "$GIT_STATUS" ]; then
 fi
 
 npm install
-rm -rf ./dist
-npm run check
-npm run build
+make clean
+make check
+make build
 
 echo
 read -p "Publish to npmjs? (y/n) " choice
@@ -27,5 +27,7 @@ git tag "v""$VERSION"
 git push --tags
 
 echo "Publishing to npmjs..."
+cp README.md LICENSE preview.png dist/
+cd dist
 npm login
 npm publish --access public

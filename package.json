@@ -2,16 +2,18 @@
   "name": "react-native-pie-chart",
   "version": "4.0.0",
   "description": "pie chart for react native",
-  "main": "./dist/index.js",
-  "types": "dist/index.d.ts",
   "scripts": {
     "tsc": "tsc",
     "tsc:watch": "tsc --watch",
     "pretty": "prettier './src/**/*.ts*' --write --config .prettierrc",
     "lint": "eslint --quiet './src/**/*.ts*'",
     "check": "npm run pretty && npm run lint && npm run tsc",
-    "build": "babel src --out-dir dist --extensions '.ts,.tsx'"
+    "compile": "babel src --out-dir dist --extensions '.ts,.tsx'",
+    "build": "echo 'Error: use make build instead' && exit 3"
   },
+  "private": true,
+  "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/aidin36/react-native-pie-chart"
@@ -25,7 +27,8 @@
     "react",
     "react-native",
     "chart",
-    "pie-chart"
+    "pie-chart",
+    "visualization"
   ],
   "peerDependencies": {
     "react": ">=18.2.0",

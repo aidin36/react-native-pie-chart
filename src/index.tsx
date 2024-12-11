@@ -1,4 +1,4 @@
-// Copyright 2023 Aidin Gharibnavaz <https://aidinhut.com>
+// Copyright 2023-2025 Aidin Gharibnavaz <https://aidinhut.com>
 
 import { StyleProp, ViewStyle } from 'react-native'
 import { Svg, G, Path } from 'react-native-svg'
