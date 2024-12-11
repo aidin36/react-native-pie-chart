@@ -4,39 +4,33 @@ import { StyleProp, ViewStyle } from 'react-native'
 import { Svg, G, Path } from 'react-native-svg'
 import * as d3 from 'd3-shape'
 
+export type Slice = {
+  value: number
+  color: string
+}
+
 export type Props = {
   widthAndHeight: number
-  series: number[]
-  sliceColor: string[]
+  series: Slice[]
   coverFill?: string | null
   coverRadius?: number
   style?: StyleProp<ViewStyle>
 }
 
-const PieChart = ({
-  widthAndHeight,
-  series,
-  sliceColor,
-  coverFill = null,
-  coverRadius,
-  style = {},
-}: Props): JSX.Element => {
+const PieChart = ({ widthAndHeight, series, coverFill = null, coverRadius, style = {} }: Props): JSX.Element => {
   // Validating props
   series.forEach((s) => {
-    if (s < 0) {
+    if (s.value < 0) {
       throw Error(`Invalid series: all numbers should be positive. Found ${s}`)
+    }
+    if (!s.color) {
+      throw Error(`'color' is mandatory in the series. The invalid slice: ${JSON.stringify(s)}`)
     }
   })
 
-  const sum = series.reduce((previous, current) => previous + current, 0)
+  const sum = series.reduce((acc, current) => acc + current.value, 0)
   if (sum <= 0) {
     throw Error('Invalid series: sum of series is zero')
-  }
-
-  if (sliceColor.length != series.length) {
-    throw Error(
-      `Invalid "sliceColor": its length should be equal to the length of "series". sliceColor.length=${sliceColor.length} series.length=${series.length}`
-    )
   }
 
   if (coverRadius && (coverRadius < 0 || coverRadius > 1)) {
@@ -47,7 +41,7 @@ const PieChart = ({
 
   const pieGenerator = d3.pie().sort(null)
 
-  const arcs = pieGenerator(series)
+  const arcs = pieGenerator(series.map((s) => s.value))
 
   return (
     <Svg style={style} width={widthAndHeight} height={widthAndHeight}>
@@ -66,7 +60,8 @@ const PieChart = ({
 
           // TODO: Pad: "stroke": "black, "stroke-width": "2px"
           //       OR: use padAngle
-          return <Path key={arc.index} fill={sliceColor[i]} d={arcGenerator()} />
+          const sliceColor = series[i].color
+          return <Path key={arc.index} fill={sliceColor} d={arcGenerator()} />
         })}
 
         {coverRadius && coverRadius > 0 && coverFill && (
