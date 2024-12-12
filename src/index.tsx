@@ -9,15 +9,19 @@ export type Slice = {
   color: string
 }
 
+export type Cover = {
+  radius: number
+  color?: string
+}
+
 export type Props = {
   widthAndHeight: number
   series: Slice[]
-  coverFill?: string | null
-  coverRadius?: number
+  cover?: number | Cover
   style?: StyleProp<ViewStyle>
 }
 
-const PieChart = ({ widthAndHeight, series, coverFill = null, coverRadius, style = {} }: Props): JSX.Element => {
+const PieChart = ({ widthAndHeight, series, cover, style = {} }: Props): JSX.Element => {
   // Validating props
   series.forEach((s) => {
     if (s.value < 0) {
@@ -32,6 +36,9 @@ const PieChart = ({ widthAndHeight, series, coverFill = null, coverRadius, style
   if (sum <= 0) {
     throw Error('Invalid series: sum of series is zero')
   }
+
+  const coverRadius: number | undefined = typeof cover === 'object' ? cover.radius : cover
+  const coverColor: string | undefined = typeof cover === 'object' ? cover.color : undefined
 
   if (coverRadius && (coverRadius < 0 || coverRadius > 1)) {
     throw Error(`Invalid "coverRadius": It should be between zero and one. But it's ${coverRadius}`)
@@ -49,7 +56,7 @@ const PieChart = ({ widthAndHeight, series, coverFill = null, coverRadius, style
         {arcs.map((arc, i) => {
           let arcGenerator = d3.arc().outerRadius(radius).startAngle(arc.startAngle).endAngle(arc.endAngle)
 
-          // When 'coverFill' is also provided, instead of setting the
+          // When 'coverColor' is also provided, instead of setting the
           // 'innerRadius', we draw a circle in the middle. See the 'Path'
           // after the 'map'.
           if (!coverRadius) {
@@ -64,10 +71,10 @@ const PieChart = ({ widthAndHeight, series, coverFill = null, coverRadius, style
           return <Path key={arc.index} fill={sliceColor} d={arcGenerator()} />
         })}
 
-        {coverRadius && coverRadius > 0 && coverFill && (
+        {coverRadius && coverRadius > 0 && coverColor && (
           <Path
             key='cover'
-            fill={coverFill}
+            fill={coverColor}
             d={d3
               .arc()
               .outerRadius(coverRadius * radius)

@@ -21,10 +21,10 @@ export default function App() {
         <PieChart widthAndHeight={widthAndHeight} series={series} />
 
         <Text style={styles.title}>Doughnut</Text>
-        <PieChart widthAndHeight={widthAndHeight} series={series} coverRadius={0.6} />
+        <PieChart widthAndHeight={widthAndHeight} series={series} cover={0.6} />
 
         <Text style={styles.title}>Doughnut with fill</Text>
-        <PieChart widthAndHeight={widthAndHeight} series={series} coverRadius={0.6} coverFill={'#ffeab2'} />
+        <PieChart widthAndHeight={widthAndHeight} series={series} cover={{ radius: 0.6, color: '#ffeab2' }} />
       </View>
     </ScrollView>
   )

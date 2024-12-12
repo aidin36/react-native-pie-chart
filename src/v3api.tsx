@@ -30,15 +30,10 @@ const PieChart = ({
 
   const newApiSeries = series.map((value, i) => ({ value, color: sliceColor[i] }))
 
-  return (
-    <PieChartV4
-      widthAndHeight={widthAndHeight}
-      series={newApiSeries}
-      coverFill={coverFill}
-      coverRadius={coverRadius}
-      style={style}
-    />
-  )
+  const coverRadiusObject = coverRadius ? { radius: coverRadius } : undefined
+  const cover = coverRadiusObject && coverFill ? { ...coverRadiusObject, color: coverFill } : coverRadiusObject
+
+  return <PieChartV4 widthAndHeight={widthAndHeight} series={newApiSeries} cover={cover} style={style} />
 }
 
 export default PieChart
