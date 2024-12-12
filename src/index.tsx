@@ -47,9 +47,12 @@ const PieChart = ({ widthAndHeight, series, cover, style = {}, padAngle }: Props
 
   const radius = widthAndHeight / 2
 
-  const pieGenerator = d3.pie().sort(null)
-
-  const arcs = pieGenerator(series.map((s) => s.value))
+  const arcs = d3
+    .pie()
+    .sort(null)
+    // Using selector allows us to have the original data object in the 'arc.data'.
+    .value(d => d.value)
+    (series)
 
   return (
     <Svg style={style} width={widthAndHeight} height={widthAndHeight}>
@@ -70,7 +73,7 @@ const PieChart = ({ widthAndHeight, series, cover, style = {}, padAngle }: Props
             arcGenerator = arcGenerator.innerRadius(coverRadius * radius)
           }
 
-          const sliceColor = series[i].color
+          const sliceColor = arc.data.color
           return <Path key={arc.index} fill={sliceColor} d={arcGenerator()} />
         })}
 
