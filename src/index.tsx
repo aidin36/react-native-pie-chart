@@ -19,9 +19,10 @@ export type Props = {
   series: Slice[]
   cover?: number | Cover
   style?: StyleProp<ViewStyle>
+  padAngle?: number
 }
 
-const PieChart = ({ widthAndHeight, series, cover, style = {} }: Props): JSX.Element => {
+const PieChart = ({ widthAndHeight, series, cover, style = {}, padAngle }: Props): JSX.Element => {
   // Validating props
   series.forEach((s) => {
     if (s.value < 0) {
@@ -56,6 +57,10 @@ const PieChart = ({ widthAndHeight, series, cover, style = {} }: Props): JSX.Ele
         {arcs.map((arc, i) => {
           let arcGenerator = d3.arc().outerRadius(radius).startAngle(arc.startAngle).endAngle(arc.endAngle)
 
+          if (padAngle) {
+            arcGenerator = arcGenerator.padAngle(padAngle)
+          }
+
           // When 'coverColor' is also provided, instead of setting the
           // 'innerRadius', we draw a circle in the middle. See the 'Path'
           // after the 'map'.
@@ -65,8 +70,6 @@ const PieChart = ({ widthAndHeight, series, cover, style = {} }: Props): JSX.Ele
             arcGenerator = arcGenerator.innerRadius(coverRadius * radius)
           }
 
-          // TODO: Pad: "stroke": "black, "stroke-width": "2px"
-          //       OR: use padAngle
           const sliceColor = series[i].color
           return <Path key={arc.index} fill={sliceColor} d={arcGenerator()} />
         })}

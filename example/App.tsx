@@ -25,6 +25,9 @@ export default function App() {
 
         <Text style={styles.title}>Doughnut with fill</Text>
         <PieChart widthAndHeight={widthAndHeight} series={series} cover={{ radius: 0.6, color: '#ffeab2' }} />
+
+        <Text style={styles.title}>Pad Angle</Text>
+        <PieChart widthAndHeight={widthAndHeight} series={series} cover={0.6} padAngle={0.01} />
       </View>
     </ScrollView>
   )
