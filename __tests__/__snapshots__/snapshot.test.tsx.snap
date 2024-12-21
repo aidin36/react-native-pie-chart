@@ -1,0 +1,1080 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`big numbers 1`] = `
+<RNSVGSvgView
+  bbHeight={250}
+  bbWidth={250}
+  focusable={false}
+  height={250}
+  style={
+    [
+      {
+        "backgroundColor": "transparent",
+        "borderWidth": 0,
+      },
+      {},
+      {
+        "flex": 0,
+        "height": 250,
+        "width": 250,
+      },
+    ]
+  }
+  width={250}
+>
+  <RNSVGGroup
+    fill={
+      {
+        "payload": 4278190080,
+        "type": 0,
+      }
+    }
+  >
+    <RNSVGGroup
+      fill={
+        {
+          "payload": 4278190080,
+          "type": 0,
+        }
+      }
+      matrix={
+        [
+          1,
+          0,
+          0,
+          1,
+          125,
+          125,
+        ]
+      }
+    >
+      <RNSVGPath
+        d="M0,-125A125,125,0,1,1,-92.619,-83.945L0,0Z"
+        fill={
+          {
+            "payload": 4294901760,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-92.619,-83.945A125,125,0,0,1,-35.633,-119.814L0,0Z"
+        fill={
+          {
+            "payload": 4278190335,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-35.633,-119.814A125,125,0,0,1,0,-125L0,0Z"
+        fill={
+          {
+            "payload": 4278190097,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+    </RNSVGGroup>
+  </RNSVGGroup>
+</RNSVGSvgView>
+`;
+
+exports[`doughnut chart 1`] = `
+<RNSVGSvgView
+  bbHeight={400}
+  bbWidth={400}
+  focusable={false}
+  height={400}
+  style={
+    [
+      {
+        "backgroundColor": "transparent",
+        "borderWidth": 0,
+      },
+      {},
+      {
+        "flex": 0,
+        "height": 400,
+        "width": 400,
+      },
+    ]
+  }
+  width={400}
+>
+  <RNSVGGroup
+    fill={
+      {
+        "payload": 4278190080,
+        "type": 0,
+      }
+    }
+  >
+    <RNSVGGroup
+      fill={
+        {
+          "payload": 4278190080,
+          "type": 0,
+        }
+      }
+      matrix={
+        [
+          1,
+          0,
+          0,
+          1,
+          200,
+          200,
+        ]
+      }
+    >
+      <RNSVGPath
+        d="M0,-200A200,200,0,0,1,187.626,69.257L56.288,20.777A60,60,0,0,0,0,-60Z"
+        fill={
+          {
+            "payload": 4294693379,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M187.626,69.257A200,200,0,0,1,-185.549,74.644L-55.665,22.393A60,60,0,0,0,56.288,20.777Z"
+        fill={
+          {
+            "payload": 4294945467,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-185.549,74.644A200,200,0,0,1,-139.193,-143.615L-41.758,-43.085A60,60,0,0,0,-55.665,22.393Z"
+        fill={
+          {
+            "payload": 4294929408,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-139.193,-143.615A200,200,0,0,1,0,-200L0,-60A60,60,0,0,0,-41.758,-43.085Z"
+        fill={
+          {
+            "payload": 4294917120,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+    </RNSVGGroup>
+  </RNSVGGroup>
+</RNSVGSvgView>
+`;
+
+exports[`doughnut with cover chart 1`] = `
+<RNSVGSvgView
+  bbHeight={400}
+  bbWidth={400}
+  focusable={false}
+  height={400}
+  style={
+    [
+      {
+        "backgroundColor": "transparent",
+        "borderWidth": 0,
+      },
+      {},
+      {
+        "flex": 0,
+        "height": 400,
+        "width": 400,
+      },
+    ]
+  }
+  width={400}
+>
+  <RNSVGGroup
+    fill={
+      {
+        "payload": 4278190080,
+        "type": 0,
+      }
+    }
+  >
+    <RNSVGGroup
+      fill={
+        {
+          "payload": 4278190080,
+          "type": 0,
+        }
+      }
+      matrix={
+        [
+          1,
+          0,
+          0,
+          1,
+          200,
+          200,
+        ]
+      }
+    >
+      <RNSVGPath
+        d="M0,-200A200,200,0,0,1,187.626,69.257L56.288,20.777A60,60,0,0,0,0,-60Z"
+        fill={
+          {
+            "payload": 4294693379,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M187.626,69.257A200,200,0,0,1,-185.549,74.644L-55.665,22.393A60,60,0,0,0,56.288,20.777Z"
+        fill={
+          {
+            "payload": 4294945467,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-185.549,74.644A200,200,0,0,1,-139.193,-143.615L-41.758,-43.085A60,60,0,0,0,-55.665,22.393Z"
+        fill={
+          {
+            "payload": 4294929408,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-139.193,-143.615A200,200,0,0,1,0,-200L0,-60A60,60,0,0,0,-41.758,-43.085Z"
+        fill={
+          {
+            "payload": 4294917120,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M0,-60A60,60,0,1,1,0,60A60,60,0,1,1,0,-60Z"
+        fill={
+          {
+            "payload": 4282137660,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+    </RNSVGGroup>
+  </RNSVGGroup>
+</RNSVGSvgView>
+`;
+
+exports[`five slices 1`] = `
+<RNSVGSvgView
+  bbHeight={250}
+  bbWidth={250}
+  focusable={false}
+  height={250}
+  style={
+    [
+      {
+        "backgroundColor": "transparent",
+        "borderWidth": 0,
+      },
+      {},
+      {
+        "flex": 0,
+        "height": 250,
+        "width": 250,
+      },
+    ]
+  }
+  width={250}
+>
+  <RNSVGGroup
+    fill={
+      {
+        "payload": 4278190080,
+        "type": 0,
+      }
+    }
+  >
+    <RNSVGGroup
+      fill={
+        {
+          "payload": 4278190080,
+          "type": 0,
+        }
+      }
+      matrix={
+        [
+          1,
+          0,
+          0,
+          1,
+          125,
+          125,
+        ]
+      }
+    >
+      <RNSVGPath
+        d="M0,-125A125,125,0,0,1,86.975,89.779L0,0Z"
+        fill={
+          {
+            "payload": 4294693379,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M86.975,89.779A125,125,0,0,1,-105.267,67.409L0,0Z"
+        fill={
+          {
+            "payload": 4294947584,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-105.267,67.409A125,125,0,0,1,-112.503,-54.479L0,0Z"
+        fill={
+          {
+            "payload": 4294938880,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-112.503,-54.479A125,125,0,0,1,-53.391,-113.024L0,0Z"
+        fill={
+          {
+            "payload": 4294929408,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-53.391,-113.024A125,125,0,0,1,0,-125L0,0Z"
+        fill={
+          {
+            "payload": 4294917120,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+    </RNSVGGroup>
+  </RNSVGGroup>
+</RNSVGSvgView>
+`;
+
+exports[`large series 1`] = `
+<RNSVGSvgView
+  bbHeight={400}
+  bbWidth={400}
+  focusable={false}
+  height={400}
+  style={
+    [
+      {
+        "backgroundColor": "transparent",
+        "borderWidth": 0,
+      },
+      {},
+      {
+        "flex": 0,
+        "height": 400,
+        "width": 400,
+      },
+    ]
+  }
+  width={400}
+>
+  <RNSVGGroup
+    fill={
+      {
+        "payload": 4278190080,
+        "type": 0,
+      }
+    }
+  >
+    <RNSVGGroup
+      fill={
+        {
+          "payload": 4278190080,
+          "type": 0,
+        }
+      }
+      matrix={
+        [
+          1,
+          0,
+          0,
+          1,
+          200,
+          200,
+        ]
+      }
+    >
+      <RNSVGPath
+        d="M0,-200A200,200,0,0,1,1.238,-199.996L0,0Z"
+        fill={
+          {
+            "payload": 4278190080,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M1.238,-199.996A200,200,0,0,1,3.714,-199.966L0,0Z"
+        fill={
+          {
+            "payload": 4294901760,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M3.714,-199.966A200,200,0,0,1,7.427,-199.862L0,0Z"
+        fill={
+          {
+            "payload": 4278190335,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M7.427,-199.862A200,200,0,0,1,12.373,-199.617L0,0Z"
+        fill={
+          {
+            "payload": 4294951115,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M12.373,-199.617A200,200,0,0,1,192.71,-53.506L0,0Z"
+        fill={
+          {
+            "payload": 4278190080,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M192.71,-53.506A200,200,0,0,1,-3.095,199.976L0,0Z"
+        fill={
+          {
+            "payload": 4278194432,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-3.095,199.976A200,200,0,0,1,-121.035,-159.219L0,0Z"
+        fill={
+          {
+            "payload": 4288282368,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-121.035,-159.219A200,200,0,0,1,-6.189,-199.904L0,0Z"
+        fill={
+          {
+            "payload": 4294945467,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-6.189,-199.904A200,200,0,0,1,-4.952,-199.939L0,0Z"
+        fill={
+          {
+            "payload": 4294967295,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-4.952,-199.939A200,200,0,0,1,-3.714,-199.966L0,0Z"
+        fill={
+          {
+            "payload": 4294945467,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-3.714,-199.966A200,200,0,0,1,-2.476,-199.985L0,0Z"
+        fill={
+          {
+            "payload": 4288181844,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-2.476,-199.985A200,200,0,0,1,-1.238,-199.996L0,0Z"
+        fill={
+          {
+            "payload": 4278190080,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-1.238,-199.996A200,200,0,0,1,0,-200L0,0Z"
+        fill={
+          {
+            "payload": 4294951115,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+    </RNSVGGroup>
+  </RNSVGGroup>
+</RNSVGSvgView>
+`;
+
+exports[`pad angle 1`] = `
+<RNSVGSvgView
+  bbHeight={400}
+  bbWidth={400}
+  focusable={false}
+  height={400}
+  style={
+    [
+      {
+        "backgroundColor": "transparent",
+        "borderWidth": 0,
+      },
+      {},
+      {
+        "flex": 0,
+        "height": 400,
+        "width": 400,
+      },
+    ]
+  }
+  width={400}
+>
+  <RNSVGGroup
+    fill={
+      {
+        "payload": 4278190080,
+        "type": 0,
+      }
+    }
+  >
+    <RNSVGGroup
+      fill={
+        {
+          "payload": 4278190080,
+          "type": 0,
+        }
+      }
+      matrix={
+        [
+          1,
+          0,
+          0,
+          1,
+          200,
+          200,
+        ]
+      }
+    >
+      <RNSVGPath
+        d="M9.996,-199.75A200,200,0,0,1,65.867,188.843L0,0Z"
+        fill={
+          {
+            "payload": 4294693379,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M46.685,194.475A200,200,0,0,1,-46.685,194.475L0,0Z"
+        fill={
+          {
+            "payload": 4294945467,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-65.867,188.843A200,200,0,0,1,-196.294,38.321L0,0Z"
+        fill={
+          {
+            "payload": 4294929408,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-199.139,18.533A200,200,0,0,1,-9.996,-199.75L0,0Z"
+        fill={
+          {
+            "payload": 4294917120,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+    </RNSVGGroup>
+  </RNSVGGroup>
+</RNSVGSvgView>
+`;
+
+exports[`small numbers 1`] = `
+<RNSVGSvgView
+  bbHeight={250}
+  bbWidth={250}
+  focusable={false}
+  height={250}
+  style={
+    [
+      {
+        "backgroundColor": "transparent",
+        "borderWidth": 0,
+      },
+      {},
+      {
+        "flex": 0,
+        "height": 250,
+        "width": 250,
+      },
+    ]
+  }
+  width={250}
+>
+  <RNSVGGroup
+    fill={
+      {
+        "payload": 4278190080,
+        "type": 0,
+      }
+    }
+  >
+    <RNSVGGroup
+      fill={
+        {
+          "payload": 4278190080,
+          "type": 0,
+        }
+      }
+      matrix={
+        [
+          1,
+          0,
+          0,
+          1,
+          125,
+          125,
+        ]
+      }
+    >
+      <RNSVGPath
+        d="M0,-125A125,125,0,1,1,0,125L0,0Z"
+        fill={
+          {
+            "payload": 4294693379,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M0,125A125,125,0,0,1,-125,0L0,0Z"
+        fill={
+          {
+            "payload": 4294947584,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-125,0A125,125,0,0,1,0,-125L0,0Z"
+        fill={
+          {
+            "payload": 4294938880,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+    </RNSVGGroup>
+  </RNSVGGroup>
+</RNSVGSvgView>
+`;
+
+exports[`small series 1`] = `
+<RNSVGSvgView
+  bbHeight={320}
+  bbWidth={320}
+  focusable={false}
+  height={320}
+  style={
+    [
+      {
+        "backgroundColor": "transparent",
+        "borderWidth": 0,
+      },
+      {},
+      {
+        "flex": 0,
+        "height": 320,
+        "width": 320,
+      },
+    ]
+  }
+  width={320}
+>
+  <RNSVGGroup
+    fill={
+      {
+        "payload": 4278190080,
+        "type": 0,
+      }
+    }
+  >
+    <RNSVGGroup
+      fill={
+        {
+          "payload": 4278190080,
+          "type": 0,
+        }
+      }
+      matrix={
+        [
+          1,
+          0,
+          0,
+          1,
+          160,
+          160,
+        ]
+      }
+    >
+      <RNSVGPath
+        d="M0,-160A160,160,0,1,1,0,160A160,160,0,1,1,0,-160Z"
+        fill={
+          {
+            "payload": 4278190080,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+    </RNSVGGroup>
+  </RNSVGGroup>
+</RNSVGSvgView>
+`;
+
+exports[`zero in the series 1`] = `
+<RNSVGSvgView
+  bbHeight={250}
+  bbWidth={250}
+  focusable={false}
+  height={250}
+  style={
+    [
+      {
+        "backgroundColor": "transparent",
+        "borderWidth": 0,
+      },
+      {},
+      {
+        "flex": 0,
+        "height": 250,
+        "width": 250,
+      },
+    ]
+  }
+  width={250}
+>
+  <RNSVGGroup
+    fill={
+      {
+        "payload": 4278190080,
+        "type": 0,
+      }
+    }
+  >
+    <RNSVGGroup
+      fill={
+        {
+          "payload": 4278190080,
+          "type": 0,
+        }
+      }
+      matrix={
+        [
+          1,
+          0,
+          0,
+          1,
+          125,
+          125,
+        ]
+      }
+    >
+      <RNSVGPath
+        d="M0,-125A125,125,0,1,1,-84.824,91.814L0,0Z"
+        fill={
+          {
+            "payload": 4294693379,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-84.824,91.814L0,0Z"
+        fill={
+          {
+            "payload": 4294947584,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-84.824,91.814A125,125,0,0,1,-82.728,-93.708L0,0Z"
+        fill={
+          {
+            "payload": 4294938880,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-82.728,-93.708L0,0Z"
+        fill={
+          {
+            "payload": 4294929408,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-82.728,-93.708A125,125,0,0,1,0,-125L0,0Z"
+        fill={
+          {
+            "payload": 4294917120,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+    </RNSVGGroup>
+  </RNSVGGroup>
+</RNSVGSvgView>
+`;

@@ -10,14 +10,17 @@ pretty: ## Runs Prettier on all files
 lint: ## Runs ESLint on all files
 	npm run lint
 
-check: pretty lint tsc
+test: ## Run Jest tests
+	npm run test
+
+check: pretty lint tsc test
 check: ## Runs all the checks and tests we have
 
 clean: ## Cleans ./dist
 	rm -rf dist/*
 
 build: clean tsc
-build:
+build: ## Compile Typescript to Javascript
 	npm run compile
 	grep -v '\"private\":' package.json > ./dist/package.json
 

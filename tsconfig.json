@@ -60,6 +60,6 @@
 
   },
   "exclude": [
-    "node_modules", "babel.config.js", "metro.config.js", "dist", "example",
+    "node_modules", "babel.config.js", "metro.config.js", "dist", "example", "__tests__",
   ]
 }

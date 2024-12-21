@@ -51,13 +51,12 @@ const PieChart = ({ widthAndHeight, series, cover, style = {}, padAngle }: Props
     .pie()
     .sort(null)
     // Using selector allows us to have the original data object in the 'arc.data'.
-    .value(d => d.value)
-    (series)
+    .value((d) => d.value)(series)
 
   return (
     <Svg style={style} width={widthAndHeight} height={widthAndHeight}>
       <G transform={`translate(${widthAndHeight / 2}, ${widthAndHeight / 2})`}>
-        {arcs.map((arc, i) => {
+        {arcs.map((arc) => {
           let arcGenerator = d3.arc().outerRadius(radius).startAngle(arc.startAngle).endAngle(arc.endAngle)
 
           if (padAngle) {

@@ -9,7 +9,8 @@
     "lint": "eslint --quiet './src/**/*.ts*'",
     "check": "npm run pretty && npm run lint && npm run tsc",
     "compile": "babel src --out-dir dist --extensions '.ts,.tsx'",
-    "build": "echo 'Error: use make build instead' && exit 3"
+    "build": "echo 'Error: use make build instead' && exit 3",
+    "test": "jest"
   },
   "private": true,
   "main": "index.js",
@@ -40,10 +41,13 @@
     "@babel/core": "7.26.0",
     "@babel/eslint-parser": "7.25.9",
     "@babel/runtime": "7.26.0",
+    "@jest/globals": "^29.7.0",
+    "@react-native/babel-preset": "0.76.5",
     "@react-native/eslint-config": "0.76.5",
     "@types/react": "18.3.12",
     "@typescript-eslint/eslint-plugin": "8.18.0",
     "@typescript-eslint/parser": "8.18.0",
+    "babel-jest": "29.7.0",
     "eslint": "8.57.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "9.1.0",
@@ -52,11 +56,12 @@
     "eslint-plugin-prettier": "5.2.1",
     "eslint-plugin-react": "7.37.2",
     "eslint-plugin-react-native": "4.1.0",
-    "metro-react-native-babel-preset": "0.77.0",
+    "jest": "29.7.0",
     "prettier": "3.4.2",
-    "typescript": "5.7.2",
     "react": "18.3.1",
-    "react-native": "0.76.5"
+    "react-native": "0.76.5",
+    "react-test-renderer": "18.3.1",
+    "typescript": "5.7.2"
   },
   "dependencies": {
     "d3-shape": "3.2.0"
