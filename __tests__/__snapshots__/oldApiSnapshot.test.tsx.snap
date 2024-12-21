@@ -95,6 +95,101 @@ exports[`doughnut 1`] = `
 </RNSVGSvgView>
 `;
 
+exports[`doughnut with fill 1`] = `
+<RNSVGSvgView
+  bbHeight={250}
+  bbWidth={250}
+  focusable={false}
+  height={250}
+  style={
+    [
+      {
+        "backgroundColor": "transparent",
+        "borderWidth": 0,
+      },
+      {},
+      {
+        "flex": 0,
+        "height": 250,
+        "width": 250,
+      },
+    ]
+  }
+  width={250}
+>
+  <RNSVGGroup
+    fill={
+      {
+        "payload": 4278190080,
+        "type": 0,
+      }
+    }
+  >
+    <RNSVGGroup
+      fill={
+        {
+          "payload": 4278190080,
+          "type": 0,
+        }
+      }
+      matrix={
+        [
+          1,
+          0,
+          0,
+          1,
+          125,
+          125,
+        ]
+      }
+    >
+      <RNSVGPath
+        d="M0,-125A125,125,0,0,1,121.866,27.815L0,0Z"
+        fill={
+          {
+            "payload": 4294901760,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M121.866,27.815A125,125,0,1,1,-97.729,-77.936L0,0Z"
+        fill={
+          {
+            "payload": 4294936763,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGPath
+        d="M-97.729,-77.936A125,125,0,0,1,0,-125L0,0Z"
+        fill={
+          {
+            "payload": 4278190080,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+    </RNSVGGroup>
+  </RNSVGGroup>
+</RNSVGSvgView>
+`;
+
 exports[`five slices 1`] = `
 <RNSVGSvgView
   bbHeight={250}

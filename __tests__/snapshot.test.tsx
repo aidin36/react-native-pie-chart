@@ -151,3 +151,13 @@ it('check for back cover radius', () => {
   expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} cover={1.1} />)).toThrow(Error)
   expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} cover={-1} />)).toThrow(Error)
 })
+
+it('color is mandatory', () => {
+  const series = [
+    { value: 430, color: '#fbd203' },
+    { value: 123 },
+    { value: 80, color: '#ff3c00' },
+  ]
+
+  expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} />)).toThrow(Error)
+})

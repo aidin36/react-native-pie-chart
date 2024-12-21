@@ -1,5 +1,7 @@
 module.exports = {
   preset: 'react-native',
+  collectCoverage: true,
+  collectCoverageFrom: ["./src/**"],
   moduleNameMapper: {
     // Jest has issues with 'd3' package. This is not a perfect solution because
     // I'm not sure what version of `d3-shape` do we ship with our bundle.
