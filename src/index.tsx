@@ -1,12 +1,36 @@
 // Copyright 2023-2025 Aidin Gharibnavaz <https://aidinhut.com>
 
+import { Fragment } from 'react'
 import { StyleProp, ViewStyle } from 'react-native'
-import { Svg, G, Path } from 'react-native-svg'
+import { Svg, G, Path, Text, FontWeight, NumberProp, FontStyle } from 'react-native-svg'
 import * as d3 from 'd3-shape'
+
+export type SliceLabel = {
+  text: string
+  // Color to fill the font with
+  fill?: string
+  // Color of the font's outline
+  stroke?: string
+  // string or number
+  fontSize?: NumberProp
+  // Can be:
+  // 'normal', 'bold', 'bolder', 'lighter', '100', '200',... until '900'
+  fontWeight?: FontWeight
+  fontFamily?: string
+  // Can be:
+  // 'normal', 'italic', 'oblique'
+  fontStyle?: FontStyle
+  // By default, the label will be placed at the center of the slice.
+  // You can change it by setting these offsets. These are offset from
+  // the center. These can be negative.
+  offsetX?: number
+  offsetY?: number
+}
 
 export type Slice = {
   value: number
   color: string
+  label?: SliceLabel
 }
 
 export type Cover = {
@@ -15,6 +39,7 @@ export type Cover = {
 }
 
 export type Props = {
+  // Radius of the chart. In otherwords, size of the square that wraps the chart's circle.
   widthAndHeight: number
   series: Slice[]
   cover?: number | Cover
@@ -72,8 +97,31 @@ const PieChart = ({ widthAndHeight, series, cover, style = {}, padAngle }: Props
             arcGenerator = arcGenerator.innerRadius(coverRadius * radius)
           }
 
+          const [sliceCenterX, sliceCenterY] = arcGenerator.centroid(arc)
           const sliceColor = arc.data.color
-          return <Path key={arc.index} fill={sliceColor} d={arcGenerator()} />
+          const sliceLabel = arc.data.label
+
+          return (
+            <Fragment key={`f-${arc.index}`}>
+              <Path key={`p-${arc.index}`} fill={sliceColor} d={arcGenerator()} />
+              {sliceLabel && (
+                <Text
+                  key={`t-${arc.index}`}
+                  x={sliceCenterX + (sliceLabel.offsetX ?? 0)}
+                  y={sliceCenterY + (sliceLabel.offsetY ?? 0)}
+                  textAnchor='middle'
+                  fill={sliceLabel.fill}
+                  stroke={sliceLabel.stroke}
+                  fontSize={sliceLabel.fontSize}
+                  fontWeight={sliceLabel.fontWeight}
+                  fontFamily={sliceLabel.fontFamily}
+                  fontStyle={sliceLabel.fontStyle}
+                >
+                  {sliceLabel.text}
+                </Text>
+              )}
+            </Fragment>
+          )
         })}
 
         {coverRadius && coverRadius > 0 && coverColor && (
