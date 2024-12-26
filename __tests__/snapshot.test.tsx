@@ -83,6 +83,17 @@ it('large series', () => {
   expect(rendered).toMatchSnapshot()
 })
 
+it('labels', () => {
+  const series = [
+    { value: 10, color: '#ff00bb', label: { text: '10%', fill: 'red' } },
+    { value: 5, color: '#00ffbb', label: { text: '10%', fontSize: 12 } },
+    { value: 3.5, color: '#ffffbb', label: { text: '10%', fontWeight: 'bold', offsetX: 10, offsetY: -5 } },
+  ]
+
+  const rendered = renderer.create(<PieChart widthAndHeight={200} series={series} />).toJSON()
+  expect(rendered).toMatchSnapshot()
+})
+
 it('doughnut chart', () => {
   const series = [
     { value: 200, color: '#fbd203' },
@@ -141,7 +152,7 @@ it('check for all zeros series', () => {
   expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} />)).toThrow(Error)
 })
 
-it('check for back cover radius', () => {
+it('check for bad cover radius', () => {
   const series = [
     { value: 100, color: '#fbd203' },
     { value: 200, color: '#ffb300' },
@@ -153,11 +164,7 @@ it('check for back cover radius', () => {
 })
 
 it('color is mandatory', () => {
-  const series = [
-    { value: 430, color: '#fbd203' },
-    { value: 123 },
-    { value: 80, color: '#ff3c00' },
-  ]
+  const series = [{ value: 430, color: '#fbd203' }, { value: 123 }, { value: 80, color: '#ff3c00' }]
 
   expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} />)).toThrow(Error)
 })

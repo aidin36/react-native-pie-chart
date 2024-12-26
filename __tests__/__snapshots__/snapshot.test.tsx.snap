@@ -450,6 +450,237 @@ exports[`five slices 1`] = `
 </RNSVGSvgView>
 `;
 
+exports[`labels 1`] = `
+<RNSVGSvgView
+  bbHeight={200}
+  bbWidth={200}
+  focusable={false}
+  height={200}
+  style={
+    [
+      {
+        "backgroundColor": "transparent",
+        "borderWidth": 0,
+      },
+      {},
+      {
+        "flex": 0,
+        "height": 200,
+        "width": 200,
+      },
+    ]
+  }
+  width={200}
+>
+  <RNSVGGroup
+    fill={
+      {
+        "payload": 4278190080,
+        "type": 0,
+      }
+    }
+  >
+    <RNSVGGroup
+      fill={
+        {
+          "payload": 4278190080,
+          "type": 0,
+        }
+      }
+      matrix={
+        [
+          1,
+          0,
+          0,
+          1,
+          100,
+          100,
+        ]
+      }
+    >
+      <RNSVGPath
+        d="M0,-100A100,100,0,1,1,-25.198,96.773L0,0Z"
+        fill={
+          {
+            "payload": 4294901947,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGText
+        content={null}
+        dx={[]}
+        dy={[]}
+        fill={
+          {
+            "payload": 4294901760,
+            "type": 0,
+          }
+        }
+        font={
+          {
+            "textAnchor": "middle",
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+        rotate={[]}
+        x={
+          [
+            49.595021762943844,
+          ]
+        }
+        y={
+          [
+            6.35089098734393,
+          ]
+        }
+      >
+        <RNSVGTSpan
+          content="10%"
+          dx={[]}
+          dy={[]}
+          fill={
+            {
+              "payload": 4278190080,
+              "type": 0,
+            }
+          }
+          font={{}}
+          rotate={[]}
+          x={[]}
+          y={[]}
+        />
+      </RNSVGText>
+      <RNSVGPath
+        d="M-25.198,96.773A100,100,0,0,1,-92.789,-37.286L0,0Z"
+        fill={
+          {
+            "payload": 4278255547,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGText
+        content={null}
+        dx={[]}
+        dy={[]}
+        fill={
+          {
+            "payload": 4278190080,
+            "type": 0,
+          }
+        }
+        font={
+          {
+            "fontSize": 12,
+            "textAnchor": "middle",
+          }
+        }
+        rotate={[]}
+        x={
+          [
+            -44.6462929074784,
+          ]
+        }
+        y={
+          [
+            22.510187240883717,
+          ]
+        }
+      >
+        <RNSVGTSpan
+          content="10%"
+          dx={[]}
+          dy={[]}
+          fill={
+            {
+              "payload": 4278190080,
+              "type": 0,
+            }
+          }
+          font={{}}
+          rotate={[]}
+          x={[]}
+          y={[]}
+        />
+      </RNSVGText>
+      <RNSVGPath
+        d="M-92.789,-37.286A100,100,0,0,1,0,-100L0,0Z"
+        fill={
+          {
+            "payload": 4294967227,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "fill",
+          ]
+        }
+      />
+      <RNSVGText
+        content={null}
+        dx={[]}
+        dy={[]}
+        fill={
+          {
+            "payload": 4278190080,
+            "type": 0,
+          }
+        }
+        font={
+          {
+            "fontWeight": "bold",
+            "textAnchor": "middle",
+          }
+        }
+        rotate={[]}
+        x={
+          [
+            -17.998739306879834,
+          ]
+        }
+        y={
+          [
+            -46.425482462192065,
+          ]
+        }
+      >
+        <RNSVGTSpan
+          content="10%"
+          dx={[]}
+          dy={[]}
+          fill={
+            {
+              "payload": 4278190080,
+              "type": 0,
+            }
+          }
+          font={{}}
+          rotate={[]}
+          x={[]}
+          y={[]}
+        />
+      </RNSVGText>
+    </RNSVGGroup>
+  </RNSVGGroup>
+</RNSVGSvgView>
+`;
+
 exports[`large series 1`] = `
 <RNSVGSvgView
   bbHeight={400}
