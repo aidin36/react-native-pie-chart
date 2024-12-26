@@ -11,6 +11,12 @@ export default function App() {
     { value: 123, color: '#ff6c00' },
     { value: 80, color: '#ff3c00' },
   ]
+  const seriesWithLabel = [
+    { value: 40, color: '#fbd203', label: { text: '40%', fontWeight: 'bold' } },
+    { value: 30, color: '#ffb300', label: { text: '30%' } },
+    { value: 20, color: '#ff9100', label: { text: '20%' } },
+    { value: 10, color: '#ff6c00' },
+  ]
 
   return (
     <ScrollView style={styles.scrollContainer}>
@@ -23,11 +29,16 @@ export default function App() {
         <Text style={styles.title}>Doughnut</Text>
         <PieChart widthAndHeight={widthAndHeight} series={series} cover={0.6} />
 
-        <Text style={styles.title}>Doughnut with fill</Text>
-        <PieChart widthAndHeight={widthAndHeight} series={series} cover={{ radius: 0.6, color: '#ffeab2' }} />
+        <Text style={styles.title}>Doughnut with fill & Pad Angle</Text>
+        <PieChart
+          widthAndHeight={widthAndHeight}
+          series={series}
+          cover={{ radius: 0.6, color: '#ffeab2' }}
+          padAngle={0.01}
+        />
 
-        <Text style={styles.title}>Pad Angle</Text>
-        <PieChart widthAndHeight={widthAndHeight} series={series} cover={0.6} padAngle={0.01} />
+        <Text style={styles.title}>With Labels</Text>
+        <PieChart widthAndHeight={widthAndHeight} series={seriesWithLabel} />
       </View>
     </ScrollView>
   )
