@@ -66,9 +66,24 @@ const styles = StyleSheet.create({
 })
 ```
 
+### Adding labels to the chart
+
+For each element in the `series` list, you can also pass a `label` object. It allows you to adjust the font and position of each label. By default, the labels will appear at the center of each slice of the pie. You can use `offsetX` and `offsetY` to move the label.
+
+For example, in the above example code, you can add the labels like this:
+
+```javascript
+const series = [
+  { value: 430, color: '#fbd203', label: { text: 'A', fontWeight: 'bold' } },
+  { value: 321, color: '#ffb300', label: { text: 'mobile', offsetY: 10, offsetX: 10 } },
+  { value: 185, color: '#ff9100', label: { text: '%22', fontSize: 8, fontStyle: 'italic', outline: 'white' } },
+  { value: 123, color: '#ff6c00' },
+]
+```
+
 ## Example App
 
-Have a look at the app in the `example` directory for how to write a simple app that shows two charts.
+Have a look at the app in the `example` directory for a complete Typescript app that shows a few charts.
 To setup and run the example app follow these instructions:
 
 ```bash
