@@ -1,32 +1,32 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "prettier",
-    "@typescript-eslint",
-    "react",
-    "react-native"
-  ],
+  "plugins": ["prettier", "@typescript-eslint", "react", "react-native", "eslint-plugin-tsdoc"],
   "env": {
-    "browser": true
+    "browser": true,
   },
   "extends": [
     "airbnb",
     "airbnb/hooks",
     "prettier",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended",
   ],
   "rules": {
     "no-underscore-dangle": "off",
     "import/extensions": "off",
-    "import/no-unresolved": [ "off" ],
+    "import/no-unresolved": ["off"],
     "prettier/prettier": "error",
     "react/jsx-filename-extension": "off",
     "react/require-default-props": "off",
     "eqeqeq": "off",
     "no-use-before-define": "off",
-    "react/function-component-definition": [2, { "namedComponents": "arrow-function", "unnamedComponents": "arrow-function" } ],
+    "react/function-component-definition": [
+      2,
+      { "namedComponents": "arrow-function", "unnamedComponents": "arrow-function" },
+    ],
     // We're using the new JSX transform.
     "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off"
-  }
+    "react/react-in-jsx-scope": "off",
+    "tsdoc/syntax": "warn",
+  },
 }

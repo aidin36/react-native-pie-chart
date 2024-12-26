@@ -47,11 +47,7 @@ export default class TestChart extends Component {
           <PieChart widthAndHeight={widthAndHeight} series={series} />
 
           <Text style={styles.title}>Doughnut</Text>
-          <PieChart
-            widthAndHeight={widthAndHeight}
-            series={series}
-            cover={0.45}
-          />
+          <PieChart widthAndHeight={widthAndHeight} series={series} cover={0.45} />
         </View>
       </ScrollView>
     )
@@ -106,7 +102,7 @@ But if you want to use the new features, you need to use the new API. Here's how
 
 ```javascript
 const series = [100, 120, 80]
-const sliceColors = [ 'red', 'blue', 'pink' ]
+const sliceColors = ['red', 'blue', 'pink']
 ```
 
 to this:
@@ -143,7 +139,6 @@ will change to this:
 <PieChart cover={{ radius: 0.6, color: 'white' }} ... />
 ```
 
-
 ### Upgrade version 2.x.x to 3.x.x
 
 The package migrated from deprecated `@react-native-community/art` to `react-native-svg`. You need to install `react-native-svg` as per installation guide above. You can now remove `@react-native-community/art` if you didn't use it in your own code.
@@ -156,40 +151,112 @@ The only breaking change between version one and two is `chart_wh` prop. It is r
 
 ## Props
 
-| Property       | Type             | Required | Default   |
-| -------------- | ---------------- | -------- | --------- |
-| widthAndHeight | Number           | **Yes**  |           |
-| series         | Object[]         | **Yes**  |           |
-| cover          | number or Object | No       | undefined |
-| style          | Object           | No       | {}        |
-| padAngle       | number           | No       | undefined |
+```Typescript
+export type SliceLabel = {
+  /**
+   * Text of the label
+   */
+  text: string
+  /**
+   * Color to fill the font with
+   */
+  fill?: string
+  /**
+   * Color of the font's outline
+   */
+  stroke?: string
+  /**
+   * string or number
+   */
+  fontSize?: NumberProp
+  /**
+   * Can be:
+   *'normal', 'bold', 'bolder', 'lighter', '100', '200',... until '900'
+   */
+  fontWeight?: FontWeight
+  /**
+   * Name of the font
+   */
+  fontFamily?: string
+  /**
+   * Can be:
+   * 'normal', 'italic', 'oblique'
+   */
+  fontStyle?: FontStyle
+  /**
+   * By default, the label will be placed at the center of the slice.
+   * You can change it by setting these offsets. These are offset from
+   * the center. These can be negative.
+   */
+  offsetX?: number
+  offsetY?: number
+}
 
-**widthAndHeight**: Width and height of the chart. In otherwords, size of the square that wraps the chart's circuit.
+/**
+ * Represents one slice of the pie
+ */
+export type Slice = {
+  /**
+   * Value the slice represents.
+   * Should be a positive number.
+   */
+  value: number
+  /**
+   * Color of the slice. Can be any string that HTML & CSS accepts.
+   */
+  color: string
+  /**
+   * Optional label that appears on top of the slice.
+   */
+  label?: SliceLabel
+}
 
-**series**: Is a list of the following object:
+/**
+ * Represents the hole inside the doughnut chart
+ */
+export type Cover = {
+  /**
+   * Radius of the doughnut hole, in precentage.
+   * For example 0.3 to cover 30% of the center of the chart.
+   */
+  radius: number
+  /**
+   * Optional. Color of the doughnut hole.
+   * If you want the hole to be transparent, don't provide this
+   * field.
+   */
+  color?: string
+}
 
-```javascript
-{
-  value
-  color
+export type Props = {
+  /**
+   * Diameter of the chart. In otherwords, size of the square that wraps the chart's circle.
+   */
+  widthAndHeight: number
+  /**
+   * Chart's data.
+   * The sum of the series values cannot be zero.
+   */
+  series: Slice[]
+  /**
+   * Optional.
+   * If a `number`, it's the radius of the doughnut's hole, in percentage.
+   * (The hole will be transparent).
+   * Should be between zero and one.
+   * It can be an object that also defined the color of the hole.
+   */
+  cover?: number | Cover
+  /**
+   * Optional.
+   * React-native's style object. This will apply to the chart's SVG.
+   */
+  style?: StyleProp<ViewStyle>
+  /**
+   * If provided, it creates a gap between the slices. Use very small numbers, like `0.01`.
+   */
+  padAngle?: number
 }
 ```
-
-Both fields are required. `value` is `number`, and `color` is a string. `color` can be anything that is accepted in CSS.
-
-**cover**: If a `number`, it's the radius of the doughnut's hole, in percentage. Should be between zero and one. It can be an object that also defined the color of the hole:
-
-```javascript
-{
-  radius
-  color
-}
-```
-
-**style**: React-native's style object. This will apply to the chart's SVG.
-
-**padAngle**: If provided, it creates a gap between the slices. Use very small numbers, like `0.01`.
-
 
 ### v3 API
 
@@ -201,24 +268,37 @@ import PieChart from 'react-native-pie-chart/v3api'
 
 It will have the following props.
 
+```Typescript
 
-| Property       | Type     | Required | Default   |
-| -------------- | -------- | -------- | --------- |
-| widthAndHeight | Number   | **Yes**  |           |
-| series         | number[] | **Yes**  |           |
-| sliceColor     | string[] | **Yes**  |           |
-| coverRadius    | Number   | No       | undefined |
-| coverFill      | string   | No       | undefined |
-| style          | Object   | No       | {}        |
-
-**widthAndHeight**: Width and height of the chart. In otherwords, size of the square that wraps the chart's circuit.
-
-**series**: Chart's data. Should be a list of all positive (or zero) numbers. The sum of the series cannot be zero.
-
-**SliceColor**: Color of each slice. The first element is the color of the first slice, the second one is the color of the second slice, and so on. The size of the `sliceColor` array should be equal to the size of the `series` array.
-
-**coverRadius**: Size of the doughnut's hole, in percentage. Should be between zero and one.
-
-**CoverFill**: Color of the doughnut's hole. Set it to null to make it transparent.
-
-**style**: React-native's style object. This will apply to the chart's SVG.
+export type Props = {
+  /**
+   * Diameter of the chart. In otherwords, size of the square that wraps the chart's circle.
+   */
+  widthAndHeight: number
+  /**
+   * Chart's data. Should be a list of all positive (or zero) numbers.
+   * The sum of the series cannot be zero.
+   */
+  series: number[]
+  /**
+   * Color of each slice. The first element is the color of the first slice,
+   * the second one is the color of the second slice, and so on.
+   * The size of the `sliceColor` array should be equal to the size of the `series` array.
+   */
+  sliceColor: string[]
+  /**
+   * Color of the doughnut's hole.
+   * Don't provide it or set it to null to make it transparent.
+   */
+  coverFill?: string | null
+  /**
+   * Size of the doughnut's hole, in percentage.
+   * Should be between zero and one.
+   */
+  coverRadius?: number
+  /**
+   * React-native's style object. This will apply to the chart's SVG.
+   */
+  style?: StyleProp<ViewStyle>
+}
+```

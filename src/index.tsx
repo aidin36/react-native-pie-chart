@@ -6,44 +6,107 @@ import { Svg, G, Path, Text, FontWeight, NumberProp, FontStyle } from 'react-nat
 import * as d3 from 'd3-shape'
 
 export type SliceLabel = {
+  /**
+   * Text of the label
+   */
   text: string
-  // Color to fill the font with
+  /**
+   * Color to fill the font with
+   */
   fill?: string
-  // Color of the font's outline
+  /**
+   * Color of the font's outline
+   */
   stroke?: string
-  // string or number
+  /**
+   * string or number
+   */
   fontSize?: NumberProp
-  // Can be:
-  // 'normal', 'bold', 'bolder', 'lighter', '100', '200',... until '900'
+  /**
+   * Can be:
+   *'normal', 'bold', 'bolder', 'lighter', '100', '200',... until '900'
+   */
   fontWeight?: FontWeight
+  /**
+   * Name of the font
+   */
   fontFamily?: string
-  // Can be:
-  // 'normal', 'italic', 'oblique'
+  /**
+   * Can be:
+   * 'normal', 'italic', 'oblique'
+   */
   fontStyle?: FontStyle
-  // By default, the label will be placed at the center of the slice.
-  // You can change it by setting these offsets. These are offset from
-  // the center. These can be negative.
+  /**
+   * By default, the label will be placed at the center of the slice.
+   * You can change it by setting these offsets. These are offset from
+   * the center. These can be negative.
+   */
   offsetX?: number
   offsetY?: number
 }
 
+/**
+ * Represents one slice of the pie
+ */
 export type Slice = {
+  /**
+   * Value the slice represents.
+   * Should be a positive number.
+   */
   value: number
+  /**
+   * Color of the slice. Can be any string that HTML & CSS accepts.
+   */
   color: string
+  /**
+   * Optional label that appears on top of the slice.
+   */
   label?: SliceLabel
 }
 
+/**
+ * Represents the hole inside the doughnut chart
+ */
 export type Cover = {
+  /**
+   * Radius of the doughnut hole, in precentage.
+   * For example 0.3 to cover 30% of the center of the chart.
+   */
   radius: number
+  /**
+   * Optional. Color of the doughnut hole.
+   * If you want the hole to be transparent, don't provide this
+   * field.
+   */
   color?: string
 }
 
 export type Props = {
-  // Radius of the chart. In otherwords, size of the square that wraps the chart's circle.
+  /**
+   * Diameter of the chart. In otherwords, size of the square that wraps the chart's circle.
+   */
   widthAndHeight: number
+  /**
+   * Chart's data.
+   * The sum of the series values cannot be zero.
+   */
   series: Slice[]
+  /**
+   * Optional.
+   * If a `number`, it's the radius of the doughnut's hole, in percentage.
+   * (The hole will be transparent).
+   * Should be between zero and one.
+   * It can be an object that also defined the color of the hole.
+   */
   cover?: number | Cover
+  /**
+   * Optional.
+   * React-native's style object. This will apply to the chart's SVG.
+   */
   style?: StyleProp<ViewStyle>
+  /**
+   * If provided, it creates a gap between the slices. Use very small numbers, like `0.01`.
+   */
   padAngle?: number
 }
 
