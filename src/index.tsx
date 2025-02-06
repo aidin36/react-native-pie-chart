@@ -114,7 +114,7 @@ const PieChart = ({ widthAndHeight, series, cover, style = {}, padAngle }: Props
   // Validating props
   series.forEach((s) => {
     if (s.value < 0) {
-      throw Error(`Invalid series: all numbers should be positive. Found ${s}`)
+      throw Error(`Invalid series: all numbers should be positive. The invalid slice: ${JSON.stringify(s)}`)
     }
     if (!s.color) {
       throw Error(`'color' is mandatory in the series. The invalid slice: ${JSON.stringify(s)}`)
@@ -129,7 +129,7 @@ const PieChart = ({ widthAndHeight, series, cover, style = {}, padAngle }: Props
   const coverRadius: number | undefined = typeof cover === 'object' ? cover.radius : cover
   const coverColor: string | undefined = typeof cover === 'object' ? cover.color : undefined
 
-  if (coverRadius && (coverRadius < 0 || coverRadius > 1)) {
+  if (coverRadius != null && (coverRadius <= 0 || coverRadius >= 1)) {
     throw Error(`Invalid "coverRadius": It should be between zero and one. But it's ${coverRadius}`)
   }
 

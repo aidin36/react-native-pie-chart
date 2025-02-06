@@ -39,5 +39,7 @@ it('should throws error when length of color and series does not match', () => {
   const series = [100, 200, 50]
   const colors = ['red', '#ff88bb']
 
-  expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} sliceColor={colors} />)).toThrow(Error)
+  expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} sliceColor={colors} />)).toThrow(
+    'Invalid "sliceColor": its length should be equal to the length of "series". sliceColor.length=2 series.length=3'
+  )
 })

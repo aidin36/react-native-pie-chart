@@ -5,7 +5,7 @@ import renderer from 'react-test-renderer'
 
 import { it, expect } from '@jest/globals'
 
-import PieChart from '../src/'
+import PieChart from '../src'
 
 it('five slices', () => {
   const series = [
@@ -139,7 +139,9 @@ it('check for negative in series', () => {
     { value: 185, color: '#ff9100' },
   ]
 
-  expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} />)).toThrow(Error)
+  expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} />)).toThrow(
+    `Invalid series: all numbers should be positive. The invalid slice: {"value":-120,"color":"#ffb300"}`
+  )
 })
 
 it('check for all zeros series', () => {
@@ -149,7 +151,9 @@ it('check for all zeros series', () => {
     { value: 0, color: '#ff9100' },
   ]
 
-  expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} />)).toThrow(Error)
+  expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} />)).toThrow(
+    'Invalid series: sum of series is zero'
+  )
 })
 
 it('check for bad cover radius', () => {
@@ -159,12 +163,22 @@ it('check for bad cover radius', () => {
     { value: 50, color: '#ff9100' },
   ]
 
-  expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} cover={1.1} />)).toThrow(Error)
-  expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} cover={-1} />)).toThrow(Error)
+  const expectedError = (val: string) => `Invalid "coverRadius": It should be between zero and one. But it's ${val}`
+  expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} cover={1.1} />)).toThrow(
+    expectedError('1.1')
+  )
+  expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} cover={-1} />)).toThrow(
+    expectedError('-1')
+  )
+  expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} cover={{ radius: 0 }} />)).toThrow(
+    expectedError('0')
+  )
 })
 
 it('color is mandatory', () => {
   const series = [{ value: 430, color: '#fbd203' }, { value: 123 }, { value: 80, color: '#ff3c00' }]
 
-  expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} />)).toThrow(Error)
+  expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} />)).toThrow(
+    `'color' is mandatory in the series. The invalid slice: {"value":123}`
+  )
 })
