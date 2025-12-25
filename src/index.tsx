@@ -1,6 +1,6 @@
 // Copyright 2023-2025 Aidin Gharibnavaz <https://aidinhut.com>
 
-import { Fragment } from 'react'
+import { Fragment, JSX } from 'react'
 import { StyleProp, ViewStyle } from 'react-native'
 import { Svg, G, Path, Text, FontWeight, NumberProp, FontStyle } from 'react-native-svg'
 import * as d3 from 'd3-shape'

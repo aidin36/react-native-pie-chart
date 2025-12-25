@@ -1,7 +1,7 @@
 import React from 'react'
 import 'react-native'
 
-import renderer from 'react-test-renderer'
+import { render, screen } from '@testing-library/react-native'
 
 import { it, expect } from '@jest/globals'
 
@@ -16,8 +16,8 @@ it('five slices', () => {
     { value: 80, color: '#ff3c00' },
   ]
 
-  const rendered = renderer.create(<PieChart widthAndHeight={250} series={series} />).toJSON()
-  expect(rendered).toMatchSnapshot()
+  const rendered = render(<PieChart widthAndHeight={250} series={series} />)
+  expect(screen.toJSON()).toMatchSnapshot()
 })
 
 it('zero in the series', () => {
@@ -29,8 +29,8 @@ it('zero in the series', () => {
     { value: 80, color: '#ff3c00' },
   ]
 
-  const rendered = renderer.create(<PieChart widthAndHeight={250} series={series} />).toJSON()
-  expect(rendered).toMatchSnapshot()
+  const rendered = render(<PieChart widthAndHeight={250} series={series} />)
+  expect(screen.toJSON()).toMatchSnapshot()
 })
 
 it('small numbers', () => {
@@ -40,8 +40,8 @@ it('small numbers', () => {
     { value: 0.5, color: '#ff9100' },
   ]
 
-  const rendered = renderer.create(<PieChart widthAndHeight={250} series={series} />).toJSON()
-  expect(rendered).toMatchSnapshot()
+  const rendered = render(<PieChart widthAndHeight={250} series={series} />)
+  expect(screen.toJSON()).toMatchSnapshot()
 })
 
 it('big numbers', () => {
@@ -51,15 +51,15 @@ it('big numbers', () => {
     { value: 53000, color: '#000011' },
   ]
 
-  const rendered = renderer.create(<PieChart widthAndHeight={250} series={series} />).toJSON()
-  expect(rendered).toMatchSnapshot()
+  const rendered = render(<PieChart widthAndHeight={250} series={series} />)
+  expect(screen.toJSON()).toMatchSnapshot()
 })
 
 it('small series', () => {
   const series = [{ value: 1, color: 'black' }]
 
-  const rendered = renderer.create(<PieChart widthAndHeight={320} series={series} />).toJSON()
-  expect(rendered).toMatchSnapshot()
+  const rendered = render(<PieChart widthAndHeight={320} series={series} />)
+  expect(screen.toJSON()).toMatchSnapshot()
 })
 
 it('large series', () => {
@@ -79,8 +79,8 @@ it('large series', () => {
     { value: 1, color: 'pink' },
   ]
 
-  const rendered = renderer.create(<PieChart widthAndHeight={400} series={series} />).toJSON()
-  expect(rendered).toMatchSnapshot()
+  const rendered = render(<PieChart widthAndHeight={400} series={series} />)
+  expect(screen.toJSON()).toMatchSnapshot()
 })
 
 it('labels', () => {
@@ -90,8 +90,8 @@ it('labels', () => {
     { value: 3.5, color: '#ffffbb', label: { text: '10%', fontWeight: 'bold', offsetX: 10, offsetY: -5 } },
   ]
 
-  const rendered = renderer.create(<PieChart widthAndHeight={200} series={series} />).toJSON()
-  expect(rendered).toMatchSnapshot()
+  const rendered = render(<PieChart widthAndHeight={200} series={series} />)
+  expect(screen.toJSON()).toMatchSnapshot()
 })
 
 it('doughnut chart', () => {
@@ -102,8 +102,8 @@ it('doughnut chart', () => {
     { value: 80, color: '#ff3c00' },
   ]
 
-  const rendered = renderer.create(<PieChart widthAndHeight={400} series={series} cover={0.3} />).toJSON()
-  expect(rendered).toMatchSnapshot()
+  const rendered = render(<PieChart widthAndHeight={400} series={series} cover={0.3} />)
+  expect(screen.toJSON()).toMatchSnapshot()
 })
 
 it('doughnut with cover chart', () => {
@@ -114,10 +114,9 @@ it('doughnut with cover chart', () => {
     { value: 80, color: '#ff3c00' },
   ]
 
-  const rendered = renderer
-    .create(<PieChart widthAndHeight={400} series={series} cover={{ radius: 0.3, color: '#3c3c3c' }} />)
-    .toJSON()
-  expect(rendered).toMatchSnapshot()
+  const rendered = render(<PieChart widthAndHeight={400} series={series} cover={{ radius: 0.3, color: '#3c3c3c' }} />)
+
+  expect(screen.toJSON()).toMatchSnapshot()
 })
 
 it('pad angle', () => {
@@ -128,8 +127,8 @@ it('pad angle', () => {
     { value: 30, color: '#ff3c00' },
   ]
 
-  const rendered = renderer.create(<PieChart widthAndHeight={400} series={series} padAngle={0.1} />).toJSON()
-  expect(rendered).toMatchSnapshot()
+  const rendered = render(<PieChart widthAndHeight={400} series={series} padAngle={0.1} />)
+  expect(screen.toJSON()).toMatchSnapshot()
 })
 
 it('check for negative in series', () => {
@@ -139,7 +138,7 @@ it('check for negative in series', () => {
     { value: 185, color: '#ff9100' },
   ]
 
-  expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} />)).toThrow(
+  expect(() => render(<PieChart widthAndHeight={250} series={series} />)).toThrow(
     `Invalid series: all numbers should be positive. The invalid slice: {"value":-120,"color":"#ffb300"}`
   )
 })
@@ -151,7 +150,7 @@ it('check for all zeros series', () => {
     { value: 0, color: '#ff9100' },
   ]
 
-  expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} />)).toThrow(
+  expect(() => render(<PieChart widthAndHeight={250} series={series} />)).toThrow(
     'Invalid series: sum of series is zero'
   )
 })
@@ -164,13 +163,9 @@ it('check for bad cover radius', () => {
   ]
 
   const expectedError = (val: string) => `Invalid "coverRadius": It should be between zero and one. But it's ${val}`
-  expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} cover={1.1} />)).toThrow(
-    expectedError('1.1')
-  )
-  expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} cover={-1} />)).toThrow(
-    expectedError('-1')
-  )
-  expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} cover={{ radius: 0 }} />)).toThrow(
+  expect(() => render(<PieChart widthAndHeight={250} series={series} cover={1.1} />)).toThrow(expectedError('1.1'))
+  expect(() => render(<PieChart widthAndHeight={250} series={series} cover={-1} />)).toThrow(expectedError('-1'))
+  expect(() => render(<PieChart widthAndHeight={250} series={series} cover={{ radius: 0 }} />)).toThrow(
     expectedError('0')
   )
 })
@@ -178,7 +173,7 @@ it('check for bad cover radius', () => {
 it('color is mandatory', () => {
   const series = [{ value: 430, color: '#fbd203' }, { value: 123 }, { value: 80, color: '#ff3c00' }]
 
-  expect(() => renderer.create(<PieChart widthAndHeight={250} series={series} />)).toThrow(
+  expect(() => render(<PieChart widthAndHeight={250} series={series} />)).toThrow(
     `'color' is mandatory in the series. The invalid slice: {"value":123}`
   )
 })
