@@ -19,7 +19,7 @@ it('doughnut', () => {
   const series = [100, 200, 50]
   const colors = ['red', '#ff88bb', 'black']
 
-  const rendered = render(<PieChart widthAndHeight={250} series={series} sliceColor={colors} colorRadius={0.3} />)
+  const rendered = render(<PieChart widthAndHeight={250} series={series} sliceColor={colors} coverRadius={0.3} />)
   expect(screen.toJSON()).toMatchSnapshot()
 })
 
@@ -28,7 +28,7 @@ it('doughnut with fill', () => {
   const colors = ['red', '#ff88bb', 'black']
 
   const rendered = render(
-    <PieChart widthAndHeight={250} series={series} sliceColor={colors} colorRadius={0.3} colorFill='white' />
+    <PieChart widthAndHeight={250} series={series} sliceColor={colors} coverRadius={0.3} coverFill='white' />
   )
   expect(screen.toJSON()).toMatchSnapshot()
 })
