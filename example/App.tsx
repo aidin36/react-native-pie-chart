@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import PieChart from 'react-native-pie-chart'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 export default function App() {
   const widthAndHeight = 250
@@ -19,28 +20,29 @@ export default function App() {
   ]
 
   return (
-    <ScrollView style={styles.scrollContainer}>
-      <View style={styles.container}>
-        <StatusBar style='auto' />
+    <SafeAreaProvider>
+      <StatusBar style='auto' />
+      <ScrollView style={styles.scrollContainer}>
+        <View style={styles.container}>
+          <Text style={styles.title}>Pie</Text>
+          <PieChart widthAndHeight={widthAndHeight} series={series} />
 
-        <Text style={styles.title}>Pie</Text>
-        <PieChart widthAndHeight={widthAndHeight} series={series} />
+          <Text style={styles.title}>Doughnut</Text>
+          <PieChart widthAndHeight={widthAndHeight} series={series} cover={0.6} />
 
-        <Text style={styles.title}>Doughnut</Text>
-        <PieChart widthAndHeight={widthAndHeight} series={series} cover={0.6} />
+          <Text style={styles.title}>Doughnut with fill & Pad Angle</Text>
+          <PieChart
+            widthAndHeight={widthAndHeight}
+            series={series}
+            cover={{ radius: 0.6, color: '#ffeab2' }}
+            padAngle={0.01}
+          />
 
-        <Text style={styles.title}>Doughnut with fill & Pad Angle</Text>
-        <PieChart
-          widthAndHeight={widthAndHeight}
-          series={series}
-          cover={{ radius: 0.6, color: '#ffeab2' }}
-          padAngle={0.01}
-        />
-
-        <Text style={styles.title}>With Labels</Text>
-        <PieChart widthAndHeight={widthAndHeight} series={seriesWithLabel} />
-      </View>
-    </ScrollView>
+          <Text style={styles.title}>With Labels</Text>
+          <PieChart widthAndHeight={widthAndHeight} series={seriesWithLabel} />
+        </View>
+      </ScrollView>
+    </SafeAreaProvider>
   )
 }
 
@@ -53,6 +55,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    marginVertical: 40,
   },
   title: {
     fontSize: 24,
