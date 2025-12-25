@@ -1,4 +1,4 @@
-// Copyright 2023-2025 Aidin Gharibnavaz <https://aidinhut.com>
+// Copyright 2023-2026 Aidin Gharibnavaz <https://aidinhut.com>
 
 import { Fragment, JSX } from 'react'
 import { StyleProp, ViewStyle } from 'react-native'
