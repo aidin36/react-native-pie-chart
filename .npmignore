@@ -3,3 +3,8 @@ build
 publish.sh
 example
 TODO
+coverage
+__tests__
+jest.config.js
+Makefile
+.DS_Store
